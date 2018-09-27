@@ -8,9 +8,7 @@ class Search extends Component {
   };
   
   onChange = e => {
-    this.setState({
-      trackTitle: e.target.value
-    });
+    this.setState({ [e.target.name]: e.target.value });
   }
   
   render () {
@@ -34,6 +32,7 @@ class Search extends Component {
                     onChange={this.onChange}
                   />
                 </div>
+                <button className="btn btn-primary btn-lg btn-block mb-5" type="submit">Get Track Lyrics</button>
               </form>
             </div>
           );
