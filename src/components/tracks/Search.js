@@ -5,6 +5,12 @@ import { Consumer } from '../../context';
 class Search extends Component {
   state = {
     trackTitle: ''
+  };
+  
+  onChange = e => {
+    this.setState({
+      trackTitle: e.target.value
+    });
   }
   
   render () {
@@ -17,6 +23,18 @@ class Search extends Component {
                 <i className="fas fa-music"></i> Search For A Song
               </h1>
               <p className="lead text-center">Get the lyrics for any song</p>
+              <form >
+                <div className="form-group">
+                  <input 
+                    type="text" 
+                    className="form-control form-control-lg" 
+                    placeholder="Song tile..."
+                    name="trackTitle"
+                    value={this.state.trackTitle}
+                    onChange={this.onChange}
+                  />
+                </div>
+              </form>
             </div>
           );
         }}
